@@ -1,0 +1,14 @@
+.each-item-props {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.cart-image {
+  width: 136px;
+  height: 100px;
+}
+
+.name-image-container {
+  display: flex;
+}

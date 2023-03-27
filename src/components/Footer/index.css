@@ -1,0 +1,32 @@
+.footer-container {
+  background-color: #0f172a;
+  height: 424px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.footer-heading {
+  font-family: 'DM Sans';
+  font-style: italic;
+  color: white;
+  margin-left: 10px;
+}
+.icon-container-footer {
+  display: flex;
+}
+
+.footer-image {
+  width: 49px;
+  height: 39px;
+  align-self: center;
+}
+
+.social-icons {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}

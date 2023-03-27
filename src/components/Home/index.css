@@ -1,0 +1,60 @@
+.home-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-props {
+  width: 1110px;
+  height: 320px;
+  border-radius: 8px;
+}
+
+.slider-image {
+  width: 1110px;
+  height: 320px;
+  margin-top: 15px;
+}
+
+.popular-container {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-left: 215px;
+  margin-top: 48px;
+  width: 1110px;
+}
+
+.sort-main-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0px;
+}
+
+.sort-container {
+  align-self: center;
+}
+
+.horizontal-props {
+  width: 1110px;
+  color: #cbd2d9;
+}
+
+.offset-container {
+  display: flex;
+}
+
+.page-buttons {
+  background-color: transparent;
+  border-width: 0px;
+  align-self: center;
+  padding-top: 10px;
+}
+
+.restaurant-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin-left: 0px;
+  width: 1190px;
+}

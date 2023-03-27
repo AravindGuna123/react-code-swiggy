@@ -1,0 +1,83 @@
+.login-container {
+  display: flex;
+  background-size: cover;
+  height: 100vh;
+  background-color: white;
+}
+
+.form-container {
+  margin-left: 165px;
+  margin-bottom: 250px;
+  margin-top: 250px;
+  margin-right: 114px;
+  width: 356px;
+  height: 403px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 40px rgba(7, 7, 7, 0.08);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  margin-left: 38px;
+  margin-right: 38px;
+}
+.logo-props {
+  width: 49px;
+  height: 39px;
+}
+.logo-heading {
+  color: #f7931e;
+  font-family: 'DM Sans';
+  font-size: 24px;
+  font-style: italic;
+}
+
+.landing-image {
+  width: 705px;
+}
+
+.input-label {
+  font-size: 10px;
+  margin: 5px;
+}
+.username-input-field {
+  background-color: #e2e8f0;
+  border-radius: 2px;
+  border-width: 0px;
+  height: 24px;
+  width: 260px;
+  margin: 5px;
+}
+
+.password-input-field {
+  background-color: #e2e8f0;
+  border-radius: 2px;
+  border-width: 0px;
+  height: 24px;
+  width: 260px;
+  margin: 5px;
+}
+
+.login-button {
+  background-color: #f7931e;
+  width: 260px;
+  border-radius: 5px;
+  border-width: 0px;
+  height: 24px;
+  margin-top: 10px;
+  height: 30px;
+  color: white;
+  margin-left: 28px;
+  margin-right: 38px;
+}
+
+.loginText-props {
+  font-weight: bold;
+  font-size: 24px;
+}

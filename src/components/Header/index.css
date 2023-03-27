@@ -1,0 +1,41 @@
+.nav-header {
+  display: flex;
+  background-color: #f8fafc;
+  height: 86px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: row;
+  margin-left: 167px;
+}
+
+.logout-desktop-btn {
+  background-color: #f7931e;
+  border-radius: 2px;
+  color: white;
+  border-radius: 5px;
+  border-width: 0px;
+  font-size: 12px;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  margin-right: 167px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 20px;
+  display: flex;
+}
+
+.website-logo-header {
+  display: block;
+  align-self: center;
+}

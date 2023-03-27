@@ -1,0 +1,35 @@
+.card-container {
+  display: flex;
+  background-image: url('https://res.cloudinary.com/dcuyzmv7s/image/upload/v1679761041/Frame_279_sqnjja.png');
+  width: 100vw;
+  height: 344px;
+  color: white;
+  align-items: center;
+  padding-left: 165px;
+}
+
+.card-image {
+  width: 445px;
+  height: 280px;
+  border-radius: 8px;
+}
+
+.card-inner-container {
+  margin-left: 30px;
+  font-size: 14px;
+}
+
+.rating-cost-container {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+}
+
+.food-items-container {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 165px;
+  margin-right: 194px;
+}

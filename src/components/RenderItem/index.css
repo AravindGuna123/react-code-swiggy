@@ -1,0 +1,26 @@
+.food-item {
+  display: flex;
+  width: 477px;
+  margin-bottom: 32px;
+}
+
+.food-item-image {
+  width: 210px;
+  height: 150px;
+  border-radius: 8px;
+}
+
+.foodItem-inner-container {
+  margin-left: 30px;
+}
+
+.add-button {
+  background-color: transparent;
+  color: #ffa412;
+  border-color: #ffa412;
+  border-radius: 8px;
+  height: 32px;
+  width: 58px;
+  border-width: 2px;
+  border-style: solid;
+}
