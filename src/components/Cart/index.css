@@ -3,25 +3,30 @@
   flex-direction: column;
   height: 100vh;
   background-size: cover;
+  overflow-y: auto;
 }
 
 .no-container {
   display: flex;
   flex-direction: column;
-
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .cart-inner-container {
   display: flex;
   background-color: #f9fbfe;
   flex-direction: column;
-  height: 404px;
+
   width: 1110px;
   align-items: center;
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
 }
 
 .heading {
@@ -29,6 +34,8 @@
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
+  font-family: 'DM Sans';
+  font-size: 20px;
 }
 
 .order-list-props {
@@ -40,4 +47,36 @@
 
 .footer-align {
   margin-bottom: auto;
+}
+.empty-image {
+  width: 425px;
+  height: 356px;
+  align-self: center;
+}
+
+.order-placed-image {
+  width: 64px;
+  height: 64px;
+}
+
+.total-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 158px;
+  width: 100%;
+  font-family: 'DM Sans';
+}
+
+.total-container-inner {
+  margin-left: 680px;
+  margin-bottom: 30px;
+}
+
+.order-button {
+  background-color: #f7931e;
+  border-radius: 8px;
+  color: white;
+  border-width: 0px;
+  height: 32px;
+  width: 90px;
 }

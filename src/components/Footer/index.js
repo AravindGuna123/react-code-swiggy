@@ -1,4 +1,4 @@
-import {Component} from 'react'
+/* eslint-disable react/no-unknown-property */
 import {
   FaFacebookSquare,
   FaPinterestSquare,
@@ -23,18 +23,17 @@ export default function Footer() {
         The only thing we are serious about is food. Contact us on
       </p>
       <div className="icons-container">
-        <FaPinterestSquare
-          className="social-icons"
-          data-tesid="pintrest-social-icon"
-        />
+        <p tesid="pintrest-social-icon">
+          <FaPinterestSquare className="social-icons" />
+        </p>
         <FaInstagramSquare
           className="social-icons"
-          data-tesid="instagram-social-icon"
+          tesid="instagram-social-icon"
         />
-        <FaTwitter className="social-icons" data-tesid="twitter-social-icon" />
+        <FaTwitter className="social-icons" tesid="twitter-social-icon" />
         <FaFacebookSquare
           className="social-icons"
-          data-tesid="facebook-social-icon"
+          tesid="facebook-social-icon"
         />
       </div>
     </div>

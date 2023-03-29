@@ -1,6 +1,5 @@
-import {Component} from 'react'
 import {Switch, Route, Redirect} from 'react-router-dom'
-import TabContext from './Context/TabContext'
+
 import Login from './components/Login'
 import Cart from './components/Cart'
 import RestaurantId from './components/RestaurantId'
@@ -25,11 +24,7 @@ const sortByOptions = [
 const App = () => (
   <Switch>
     <Route exact path="/login" component={Login} />
-    <ProtectedRoute
-      exact
-      path="/"
-      component={() => <Home sortByOptions={sortByOptions} />}
-    />
+    <ProtectedRoute exact path="/" component={Home} />
     <ProtectedRoute exact path="/restaurant/:id" component={RestaurantId} />
     <ProtectedRoute exact path="/cart" component={Cart} />
     <Route path="/not-found" component={NotFound} />

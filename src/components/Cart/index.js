@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
@@ -58,11 +59,14 @@ class Cart extends Component {
       <img
         src="https://res.cloudinary.com/dcuyzmv7s/image/upload/v1679939088/OBJECTS_ez8ndv.png"
         alt="empty cart"
+        className="empty-image"
       />
       <h1>No Order Yet!</h1>
       <p>Your cart is empty. Add something from the menu.</p>
       <Link to="/">
-        <button type="button">Order Now</button>
+        <button type="button" className="order-button">
+          Order Now
+        </button>
       </Link>
     </div>
   )
@@ -71,17 +75,16 @@ class Cart extends Component {
     <div className="no-container">
       <img
         src="https://res.cloudinary.com/dcuyzmv7s/image/upload/v1679939237/Vector_4_qll6mm.png"
-        alt=""
+        alt="orderPlaced"
+        className="order-placed-image"
       />
       <h1>Payment Successful</h1>
-      <p>
-        Thank you for ordering
-        <br />
-        Your payment is successfully completed.
-      </p>
-      <button type="button" onClick={this.clickHome}>
-        Go to Home Page
-      </button>
+      <p>Thank you for ordering Your payment is successfully completed.</p>
+      <Link to="/">
+        <button type="button" className="order-button">
+          Go to Home Page
+        </button>
+      </Link>
     </div>
   )
 
@@ -102,7 +105,6 @@ class Cart extends Component {
       (accumulator, value) => accumulator + value,
       0,
     )
-    console.log(totalValue)
 
     return (
       <div>
@@ -124,12 +126,16 @@ class Cart extends Component {
             </ul>
             <hr className="line-props" />
             <div className="total-container">
-              <p>Order Total:</p>
-              <div className="total-container">
-                <p>
+              <h1 style={{fontSize: '24px'}}>Order Total:</h1>
+              <div className="total-container-inner">
+                <p testid="total-price" style={{fontSize: '24px'}}>
                   <BiRupee /> {totalValue}
                 </p>
-                <button type="button" onClick={this.clickOrder}>
+                <button
+                  type="button"
+                  onClick={this.clickOrder}
+                  className="order-button"
+                >
                   Place Order
                 </button>
               </div>
@@ -144,7 +150,7 @@ class Cart extends Component {
 
   getCartStatus = () => {
     const {cartStatus} = this.state
-    console.log(cartStatus)
+
     switch (cartStatus) {
       case cartItemsStatus.inProgress:
         return this.renderLoading()
@@ -170,7 +176,7 @@ class Cart extends Component {
 
     return (
       <div className="cart-container">
-        <Header />
+        <Header cartImage="true" />
         {this.getCartStatus()}
         {val ? <Footer className="footer-align" /> : ''}
       </div>

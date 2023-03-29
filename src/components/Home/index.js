@@ -10,6 +10,19 @@ import RestaurantRenderComp from '../RestaurantRenderComp'
 import Footer from '../Footer'
 import './index.css'
 
+const sortByOptions = [
+  {
+    id: 0,
+    displayText: 'Highest',
+    value: 'Highest',
+  },
+  {
+    id: 2,
+    displayText: 'Lowest',
+    value: 'Lowest',
+  },
+]
+
 const apiStatusConstantsOffers = {
   initial: 'INITIAL',
   success: 'SUCCESS',
@@ -30,7 +43,7 @@ class Home extends Component {
     apiStatusRest: apiStatusConstantsRestaurants.initial,
     offers: [],
     restaurantsList: [],
-    activeSort: 'Highest',
+    activeSort: 'Lowest',
     activePage: 1,
   }
 
@@ -133,10 +146,7 @@ class Home extends Component {
   )
 
   renderLoaderRest = () => (
-    <div
-      className="products-loader-container"
-      testid="restaurant-details-loader"
-    >
+    <div className="products-loader-container" testid="restaurants-list-loader">
       <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
     </div>
   )
@@ -153,7 +163,7 @@ class Home extends Component {
       <div className="slider-props">
         <Slider {...settings}>
           {offers.map(each => (
-            <div>
+            <div key={each.id}>
               <img src={each.imageUrl} alt="offer" className="slider-image" />
             </div>
           ))}
@@ -179,7 +189,7 @@ class Home extends Component {
   clickMinus = () => {
     const {activePage} = this.state
     console.log(activePage)
-    if (activePage > 0) {
+    if (activePage > 1) {
       this.setState(
         prevState => ({
           activePage: prevState.activePage - 1,
@@ -191,7 +201,7 @@ class Home extends Component {
 
   clickPlus = () => {
     const {activePage} = this.state
-    if (activePage < 20) {
+    if (activePage < 4) {
       this.setState(
         prevState => ({
           activePage: prevState.activePage + 1,
@@ -236,9 +246,7 @@ class Home extends Component {
   }
 
   render() {
-    const {offers, activePage} = this.state
-
-    const {sortByOptions} = this.props
+    const {activePage} = this.state
 
     return (
       <div className="home-main-container">
@@ -275,7 +283,7 @@ class Home extends Component {
             <AiOutlineMinusSquare style={{marginRight: '5px'}} />
           </button>
           <p>
-            <span data-testid="active-page-number">{activePage}</span> of 4
+            <span testid="active-page-number">{activePage}</span> of 4
           </p>
           <button
             type="button"

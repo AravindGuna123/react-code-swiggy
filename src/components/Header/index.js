@@ -5,6 +5,7 @@ import Cookie from 'js-cookie'
 import './index.css'
 
 const Header = props => {
+  const {cartImage} = props
   const onClickLogout = () => {
     localStorage.removeItem('cartData')
     Cookie.remove('jwt_token')
@@ -30,7 +31,7 @@ const Header = props => {
         </Link>
 
         <Link to="/cart" className="nav-link">
-          <li>Cart</li>
+          {cartImage ? <li className="orange-cart">Cart</li> : <li>Cart</li>}
         </Link>
 
         <button

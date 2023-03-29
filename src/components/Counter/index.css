@@ -1,0 +1,5 @@
+.button-container-counter {
+  display: flex;
+  justify-content: space-between;
+  width: 35%;
+}

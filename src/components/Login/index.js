@@ -104,7 +104,7 @@ class Login extends Component {
             className="logo-props"
           />
           <h1 className="logo-heading">Tasty Kitchens</h1>
-          <p className="loginText-props">Login</p>
+          <h1 className="loginText-props">Login</h1>
           <div className="input-container">{this.renderUsernameField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
           <button type="submit" className="login-button">

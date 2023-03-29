@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import {AiFillStar} from 'react-icons/ai'
@@ -89,7 +90,7 @@ class RestaurantId extends Component {
   renderLoaderDetails = () => (
     <div
       className="products-loader-container"
-      data-testid="restaurants-details-loader"
+      testid="restaurant-details-loader"
     >
       <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Link} from 'react-router-dom'
 import {AiFillStar} from 'react-icons/ai'
 import './index.css'
@@ -8,7 +9,7 @@ const RestaurantRenderComp = props => {
   const {rating, totalReviews, ratingColor} = userRating
 
   return (
-    <li className="each-restaurant-list" data-testid="restaurant-item">
+    <li className="each-restaurant-list" testid="restaurant-item">
       <Link to={`/restaurant/${id}`} className="restaurant-link">
         <img
           src={imageUrl}

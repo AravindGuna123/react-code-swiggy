@@ -10,6 +10,23 @@ class RenderItem extends Component {
     buttonVisible: true,
   }
 
+  componentDidMount() {
+    this.updateButton()
+  }
+
+  updateButton = () => {
+    const {details} = this.props
+    const {id} = details
+    const resultItem = JSON.parse(localStorage.getItem('cartData'))
+    const filterItem = resultItem.filter(each => each.id === id)
+
+    if (filterItem.length !== 0) {
+      this.setState({
+        buttonVisible: false,
+      })
+    }
+  }
+
   zeroQuantity = () => {
     this.setState({
       buttonVisible: true,
@@ -23,29 +40,30 @@ class RenderItem extends Component {
 
     const clickAddButton = () => {
       const data = JSON.parse(localStorage.getItem('cartData'))
+      const filterCartItem = data.filter(each => each.id === id)
 
-      const newItem = {
-        id,
-        name,
-        imageUrl,
-        cost,
-        quantity: 1,
+      if (filterCartItem.length === 0) {
+        const newItem = {
+          id,
+          name,
+          imageUrl,
+          cost,
+          quantity: 1,
+        }
+
+        data.push(newItem)
+        localStorage.setItem('cartData', JSON.stringify(data))
+        this.setState(prevState => ({
+          buttonVisible: !prevState.buttonVisible,
+        }))
       }
-
-      data.push(newItem)
-      console.log(data)
-
-      localStorage.setItem('cartData', JSON.stringify(data))
-      this.setState(prevState => ({
-        buttonVisible: !prevState.buttonVisible,
-      }))
     }
 
     return (
       <li testid="foodItem" className="food-item">
         <img src={imageUrl} alt="food" className="food-item-image" />
         <div className="foodItem-inner-container">
-          <p>{name}</p>
+          <h1>{name}</h1>
           <p>
             <BiRupee /> {cost}
           </p>

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
-import Counter from '../Counter'
+import {BiRupee} from 'react-icons/bi'
 import './index.css'
 
 class CartDataRender extends Component {
@@ -34,9 +34,12 @@ class CartDataRender extends Component {
         return {...each}
       })
       localStorage.setItem('cartData', JSON.stringify(updatedList))
-      this.setState(prevState => ({
-        x: prevState.x - 1,
-      }))
+      this.setState(
+        prevState => ({
+          x: prevState.x - 1,
+        }),
+        zeroItem(),
+      )
     } else {
       const updatedList = cartList.filter(each => each.id !== id)
 
@@ -49,7 +52,7 @@ class CartDataRender extends Component {
   }
 
   onIncrement = () => {
-    const {details} = this.props
+    const {details, zeroItem} = this.props
     const {id} = details
     const cartList = JSON.parse(localStorage.getItem('cartData'))
     const updatedList = cartList.map(each => {
@@ -60,9 +63,12 @@ class CartDataRender extends Component {
     })
     localStorage.setItem('cartData', JSON.stringify(updatedList))
 
-    this.setState(prevState => ({
-      x: prevState.x + 1,
-    }))
+    this.setState(
+      prevState => ({
+        x: prevState.x + 1,
+      }),
+      zeroItem(),
+    )
   }
 
   render() {
@@ -75,22 +81,41 @@ class CartDataRender extends Component {
           <li testid="cartItem" className="each-item-props">
             <div className="name-image-container">
               <img src={imageUrl} alt="foodItem" className="cart-image" />
-              <h1>{name}</h1>
+              <h1
+                style={{
+                  fontSize: '20px',
+                  marginLeft: '10px',
+                  fontFamily: 'DM Sans',
+                  fontWeight: 'normal',
+                }}
+              >
+                {name}
+              </h1>
             </div>
-            <div className="button-container" testid="decrement-quantity">
-              <button type="button" onClick={this.onDecrement}>
+            <div className="button-container">
+              <button
+                type="button"
+                onClick={this.onDecrement}
+                className="button-props-decrement"
+                testid="decrement-quantity"
+              >
                 -
               </button>
-              <p>{x}</p>
+              <p testid="item-quantity">{x}</p>
               <button
                 type="button"
                 onClick={this.onIncrement}
                 testid="increment-quantity"
+                className="button-props-increment"
               >
                 +
               </button>
             </div>
-            <p>{cost * x}</p>
+            <p
+              style={{marginLeft: '290px', color: '#FFA412', fontWeight: '700'}}
+            >
+              <BiRupee /> {cost * x}.00
+            </p>
           </li>
         ) : (
           ''

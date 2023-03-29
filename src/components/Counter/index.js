@@ -8,6 +8,23 @@ class Counter extends Component {
     activeCount: 1,
   }
 
+  componentDidMount() {
+    this.updateQuantity()
+  }
+
+  updateQuantity = () => {
+    const {details} = this.props
+    const {id} = details
+    const cartListCounter = JSON.parse(localStorage.getItem('cartData'))
+    const resultItem = cartListCounter.filter(each => each.id === id)
+    console.log(resultItem)
+    if (resultItem.length !== 0) {
+      this.setState({
+        activeCount: resultItem[0].quantity,
+      })
+    }
+  }
+
   onDecrement = () => {
     const {activeCount} = this.state
     const {details, zeroQuantity} = this.props
@@ -37,6 +54,7 @@ class Counter extends Component {
     const {details} = this.props
     const {id} = details
     const cartList = JSON.parse(localStorage.getItem('cartData'))
+
     const updatedList = cartList.map(each => {
       if (each.id === id) {
         return {...each, quantity: each.quantity + 1}
@@ -53,12 +71,20 @@ class Counter extends Component {
   render() {
     const {activeCount} = this.state
     return (
-      <div>
-        <button type="button" onClick={this.onDecrement}>
+      <div className="button-container-counter">
+        <button
+          type="button"
+          onClick={this.onDecrement}
+          testid="decrement-count"
+        >
           -
         </button>
         <div testid="active-count">{activeCount}</div>
-        <button type="button" onClick={this.onIncrement}>
+        <button
+          type="button"
+          onClick={this.onIncrement}
+          testid="increment-count"
+        >
           +
         </button>
       </div>
