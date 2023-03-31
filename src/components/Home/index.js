@@ -43,7 +43,7 @@ class Home extends Component {
     apiStatusRest: apiStatusConstantsRestaurants.initial,
     offers: [],
     restaurantsList: [],
-    activeSort: 'Lowest',
+    activeSort: 'Highest',
     activePage: 1,
   }
 
