@@ -18,7 +18,7 @@ const RestaurantRenderComp = props => {
         />
       </Link>
       <div className="first-container-restaurant">
-        <p
+        <h1
           style={{
             fontSize: '14px',
             marginTop: '0px',
@@ -27,7 +27,7 @@ const RestaurantRenderComp = props => {
           }}
         >
           {name}
-        </p>
+        </h1>
         <p className="cuisine-text">{cuisine}</p>
         <div className="ratings-container">
           <AiFillStar style={{color: `${ratingColor}`, alignSelf: 'center'}} />

@@ -1,45 +1,123 @@
-.nav-header {
-  display: flex;
-  background-color: #f8fafc;
-  height: 86px;
-  align-items: center;
-  justify-content: space-between;
-  width: 100vw;
+@media (min-width: 360px) {
+  .nav-header {
+    display: flex;
+    background-color: #f8fafc;
+    height: 86px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+  }
+
+  .nav-content {
+    display: flex;
+    flex-direction: row;
+    margin-left: 167px;
+  }
+
+  .logout-desktop-btn {
+    background-color: #f7931e;
+    border-radius: 2px;
+    color: white;
+    border-radius: 5px;
+    border-width: 0px;
+    font-size: 12px;
+  }
+
+  .nav-menu {
+    list-style-type: none;
+    display: flex;
+    margin-right: 167px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+    display: flex;
+  }
+
+  .website-logo-header {
+    display: block;
+    align-self: center;
+  }
+
+  .orange-cart {
+    color: #f7931e;
+  }
+  .showBurgerClass {
+    display: none;
+  }
+  .hideBurgerClass {
+    display: none;
+  }
+  .burger-button {
+    display: none;
+  }
 }
 
-.nav-content {
-  display: flex;
-  flex-direction: row;
-  margin-left: 167px;
-}
+@media (max-width: 360px) {
+  .nav-header {
+    display: flex;
+    background-color: #f8fafc;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+  }
+  .nav-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+  }
+  .website-logo-header {
+    width: 39px;
+    height: 32px;
+  }
+  .logo-heading-header {
+    font-size: 16px;
+    font-family: 'DM Sans';
+    color: #f7931e;
+    font-style: italic;
+  }
+  .hideBurgerClass {
+    display: none;
+  }
+  .showBurgerClass {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+  }
+  .first {
+    display: flex;
+  }
 
-.logout-desktop-btn {
-  background-color: #f7931e;
-  border-radius: 2px;
-  color: white;
-  border-radius: 5px;
-  border-width: 0px;
-  font-size: 12px;
-}
+  .nav-menu {
+    display: none;
+  }
+  .burger-button {
+    background-color: transparent;
+    border-width: 0px;
+    margin-right: 40px;
+  }
 
-.nav-menu {
-  list-style-type: none;
-  display: flex;
-  margin-right: 167px;
-}
+  .nav-link {
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+    display: flex;
+  }
 
-.nav-link {
-  text-decoration: none;
-  font-weight: bold;
-  margin-right: 20px;
-  display: flex;
-}
+  .logout-desktop-btn {
+    background-color: #f7931e;
+    border-radius: 2px;
+    color: white;
+    border-radius: 5px;
+    border-width: 0px;
+    font-size: 12px;
+  }
 
-.website-logo-header {
-  display: block;
-  align-self: center;
-}
-
-.orange-cart {
-  color: #f7931e;
+  .orange-cart {
+    color: #f7931e;
+  }
 }

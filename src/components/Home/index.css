@@ -1,9 +1,3 @@
-.home-main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .slider-props {
   width: 1110px;
   height: 320px;
@@ -16,28 +10,65 @@
   margin-top: 15px;
 }
 
-.popular-container {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  margin-left: 215px;
-  margin-top: 48px;
-  width: 1110px;
+@media (max-width: 360px) {
+  .home-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .slider-props {
+    width: 350px;
+    height: 118px;
+    border-radius: 5px;
+  }
+  .slider-image {
+    width: 350px;
+    height: 118px;
+  }
+  .popular-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 14px;
+    padding-bottom: 0px;
+  }
+  .sort-main-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  .sort-container {
+    align-self: flex-start;
+  }
+  .restaurant-list-container {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
+  }
+  .horizontal-props {
+    width: 100vw;
+    color: #cbd2d9;
+  }
 }
 
-.sort-main-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0px;
-}
-
-.sort-container {
-  align-self: center;
-}
-
-.horizontal-props {
-  width: 1110px;
-  color: #cbd2d9;
+@media (min-width: 360px) {
+  .sort-container {
+    align-self: center;
+  }
+  .home-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sort-main-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+  }
 }
 
 .offset-container {
@@ -50,11 +81,24 @@
   align-self: center;
   padding-top: 10px;
 }
-
-.restaurant-list-container {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-  margin-left: 0px;
-  width: 1190px;
+@media (min-width: 360px) {
+  .restaurant-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-left: 0px;
+    width: 1190px;
+  }
+  .popular-container {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin-left: 215px;
+    margin-top: 48px;
+    width: 1110px;
+  }
+  .horizontal-props {
+    width: 1110px;
+    color: #cbd2d9;
+  }
 }

@@ -92,6 +92,46 @@ class CartDataRender extends Component {
                 {name}
               </h1>
             </div>
+            <div className="name-image-small">
+              <img src={imageUrl} alt="foodItem" className="cart-image" />
+
+              <div className="details-container-small">
+                <h1
+                  style={{
+                    fontSize: '14px',
+                    marginLeft: '10px',
+                    fontFamily: 'DM Sans',
+                    fontWeight: 'normal',
+                    marginBottom: '0px',
+                    marginTop: '0px',
+                  }}
+                >
+                  {name}
+                </h1>
+                <div className="button-container-small">
+                  <button
+                    type="button"
+                    onClick={this.onDecrement}
+                    className="button-props-decrement"
+                    testid="decrement-quantity"
+                  >
+                    -
+                  </button>
+                  <p testid="item-quantity">{x}</p>
+                  <button
+                    type="button"
+                    onClick={this.onIncrement}
+                    testid="increment-quantity"
+                    className="button-props-increment"
+                  >
+                    +
+                  </button>
+                </div>
+                <p className="price-small">
+                  <BiRupee /> {cost * x}.00
+                </p>
+              </div>
+            </div>
             <div className="button-container">
               <button
                 type="button"
@@ -111,9 +151,7 @@ class CartDataRender extends Component {
                 +
               </button>
             </div>
-            <p
-              style={{marginLeft: '290px', color: '#FFA412', fontWeight: '700'}}
-            >
+            <p className="price">
               <BiRupee /> {cost * x}.00
             </p>
           </li>

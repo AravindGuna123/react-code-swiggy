@@ -16,14 +16,20 @@ class RenderItem extends Component {
 
   updateButton = () => {
     const {details} = this.props
+    let filterItem
     const {id} = details
     const resultItem = JSON.parse(localStorage.getItem('cartData'))
-    const filterItem = resultItem.filter(each => each.id === id)
 
-    if (filterItem.length !== 0) {
-      this.setState({
-        buttonVisible: false,
-      })
+    if (resultItem.length > 0) {
+      filterItem = resultItem.filter(each => each.id === id)
+    }
+
+    if (filterItem !== undefined) {
+      if (filterItem.length > 0) {
+        this.setState({
+          buttonVisible: false,
+        })
+      }
     }
   }
 
@@ -39,10 +45,13 @@ class RenderItem extends Component {
     const {buttonVisible} = this.state
 
     const clickAddButton = () => {
+      let filterCartItem
       const data = JSON.parse(localStorage.getItem('cartData'))
-      const filterCartItem = data.filter(each => each.id === id)
+      if (data !== null) {
+        filterCartItem = data.filter(each => each.id === id)
+      }
 
-      if (filterCartItem.length === 0) {
+      if (filterCartItem !== null) {
         const newItem = {
           id,
           name,
@@ -63,8 +72,8 @@ class RenderItem extends Component {
       <li testid="foodItem" className="food-item">
         <img src={imageUrl} alt="food" className="food-item-image" />
         <div className="foodItem-inner-container">
-          <h1>{name}</h1>
-          <p>
+          <h1 className="name-small">{name}</h1>
+          <p className="rate-small">
             <BiRupee /> {cost}
           </p>
           {buttonVisible ? (

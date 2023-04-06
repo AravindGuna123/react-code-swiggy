@@ -31,7 +31,7 @@ class Cart extends Component {
       cartStatus: cartItemsStatus.inProgress,
     })
     const cartList = JSON.parse(localStorage.getItem('cartData'))
-    if (cartList.length > 0) {
+    if (cartList !== null) {
       this.setState({
         cartStatus: cartItemsStatus.success,
         cartDataList: cartList,
@@ -93,6 +93,7 @@ class Cart extends Component {
   }
 
   clickOrder = () => {
+    localStorage.removeItem('cartData')
     this.setState({
       cartStatus: cartItemsStatus.placeOrder,
     })
@@ -126,9 +127,9 @@ class Cart extends Component {
             </ul>
             <hr className="line-props" />
             <div className="total-container">
-              <h1 style={{fontSize: '24px'}}>Order Total:</h1>
+              <h1 className="total-order-heading">Order Total:</h1>
               <div className="total-container-inner">
-                <p testid="total-price" style={{fontSize: '24px'}}>
+                <p testid="total-price" className="order-total">
                   <BiRupee /> {totalValue}
                 </p>
                 <button

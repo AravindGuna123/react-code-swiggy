@@ -19,13 +19,15 @@ export default function Footer() {
         />
         <h1 className="footer-heading">Tasty Kitchens</h1>
       </div>
-      <p style={{fontSize: '22px'}}>
+      <p className="footer-para">
         The only thing we are serious about is food. Contact us on
       </p>
       <div className="icons-container">
-        <p tesid="pintrest-social-icon">
-          <FaPinterestSquare className="social-icons" />
-        </p>
+        <FaPinterestSquare
+          className="social-icons"
+          tesid="pintrest-social-icon"
+        />
+
         <FaInstagramSquare
           className="social-icons"
           tesid="instagram-social-icon"

@@ -127,20 +127,20 @@ class RestaurantId extends Component {
       <div className="card-container">
         <img src={imageUrl} alt="restaurant" className="card-image" />
         <div className="card-inner-container">
-          <h1>{name}</h1>
-          <p>{cuisine}</p>
-          <p>{location}</p>
+          <h1 className="name-small">{name}</h1>
+          <p className="para-small">{cuisine}</p>
+          <p className="para-small">{location}</p>
           <div className="rating-cost-container">
             <div className="ratings-card-container">
               <p style={{fontWeight: 'bold'}}>
                 <AiFillStar /> {rating}
               </p>
-              <p>{ratingVal}+ ratings</p>
+              <p>{ratingVal}+ Ratings</p>
             </div>
             <hr
               style={{
                 width: '1px',
-                height: '60px',
+                height: '50px',
                 background: '#E2E8F0',
                 border: 'none',
               }}
